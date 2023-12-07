@@ -1,32 +1,18 @@
 <script setup>
-import {
-  FwbNavbar,
-  FwbNavbarCollapse,
-  FwbNavbarLink,
-  FwbNavbarLogo,
-  FwbAvatar ,
-} from 'flowbite-vue'
-
 
 </script>
-
 <template>
-    <fwb-navbar solid>
-      <template #logo>
-        <fwb-navbar-logo alt="Flowbite logo" image-url="https://www.kasidate.me/assets/images/kplusg.png" link="#">
-          Shopping
-        </fwb-navbar-logo>
-      </template>
-      <template theme="purple" class="bg-[#48216d]" #default="{isShowMenu}">
-        <fwb-navbar-collapse :is-show-menu="isShowMenu">
-          <fwb-navbar-link link="#">
-             <fwb-avatar size="sm"  initials="Log" rounded />
-          </fwb-navbar-link>
+    <nav class="bg-gray-900 py-2 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-white">INT305 Assignmnet</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"> 
+                <div type="button"
+                    class="text-white bg-gray-700 px-3 py-2 rounded-xl">Kasidate Phlaiphueak -
+                    6413000004</div>
+            </div>
 
-        </fwb-navbar-collapse>
-      </template>
-    </fwb-navbar>
-  </template>
-<style>
-
-</style>
+        </div>
+    </nav>
+</template>

@@ -23,6 +23,7 @@ const dataList = ref('')
 const currentQry = ref(0)
 const getQuery = async (id) => {
     currentQry.value = id
+    dataList.value =undefined
     if(id===1){
         queryName.value = "List All Product"
         loadComponant.value = 'productList'

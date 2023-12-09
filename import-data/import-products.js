@@ -11,6 +11,7 @@ var db = getFirestore() ;
 
 const products = [
   {
+    "productId":1,
     "name": "Smartphone X",
     "description": "A powerful and sleek smartphone with advanced features.",
     "price": 699.99,
@@ -22,6 +23,7 @@ const products = [
     "image_url": "https://example.com/smartphone-x.jpg"
   },
   {
+    "productId":2,
     "name": "Laptop Pro",
     "description": "High-performance laptop for work and entertainment.",
     "price": 1299.99,
@@ -33,7 +35,8 @@ const products = [
     "image_url": "https://example.com/laptop-pro.jpg"
   },
   {
-    "name": "Comfortable Sofa",
+    "productId":3,
+    "name": "The Mongoset Sofa",
     "description": "A stylish and comfortable sofa for your living room.",
     "price": 499.99,
     "category": "Furniture",
@@ -44,6 +47,7 @@ const products = [
     "image_url": "https://example.com/comfortable-sofa.jpg"
   },
   {
+    "productId":4,
     "name": "Running Shoes",
     "description": "Durable and comfortable running shoes for fitness enthusiasts.",
     "price": 89.99,
@@ -55,6 +59,7 @@ const products = [
     "image_url": "https://example.com/running-shoes.jpg"
   },
   {
+    "productId":5,
     "name": "HD Smart TV",
     "description": "Immersive entertainment with high-definition smart TV.",
     "price": 899.99,
@@ -66,6 +71,7 @@ const products = [
     "image_url": "https://example.com/hd-smart-tv.jpg"
   },
   {
+    "productId":6,
     "name": "Designer Watch",
     "description": "Elegant and stylish designer watch for any occasion.",
     "price": 299.99,
@@ -77,6 +83,7 @@ const products = [
     "image_url": "https://example.com/designer-watch.jpg"
   },
   {
+    "productId":7,
     "name": "Coffee Maker",
     "description": "Enjoy freshly brewed coffee with this modern coffee maker.",
     "price": 69.99,
@@ -88,6 +95,7 @@ const products = [
     "image_url": "https://example.com/coffee-maker.jpg"
   },
   {
+    "productId":8,
     "name": "Gaming Console",
     "description": "Next-gen gaming console for an ultimate gaming experience.",
     "price": 449.99,
@@ -99,6 +107,7 @@ const products = [
     "image_url": "https://example.com/gaming-console.jpg"
   },
   {
+    "productId":9,
     "name": "Outdoor Grill",
     "description": "Premium outdoor grill for barbecue enthusiasts.",
     "price": 249.99,
@@ -110,6 +119,7 @@ const products = [
     "image_url": "https://example.com/outdoor-grill.jpg"
   },
   {
+    "productId":10,
     "name": "Wireless Earbuds",
     "description": "Compact and wireless earbuds for on-the-go music lovers.",
     "price": 79.99,
@@ -121,6 +131,7 @@ const products = [
     "image_url": "https://example.com/wireless-earbuds.jpg"
   },
   {
+    "productId":11,
     "name": "Digital Camera",
     "description": "Capture stunning moments with this high-resolution digital camera.",
     "price": 599.99,
@@ -132,6 +143,7 @@ const products = [
     "image_url": "https://example.com/digital-camera.jpg"
   },
   {
+    "productId":12,
     "name": "Backpacker's Tent",
     "description": "Lightweight and durable tent for backpacking adventures.",
     "price": 129.99,
@@ -143,6 +155,7 @@ const products = [
     "image_url": "https://example.com/backpackers-tent.jpg"
   },
   {
+    "productId":13,
     "name": "Home Security Camera",
     "description": "Keep your home secure with this smart security camera.",
     "price": 149.99,
@@ -154,9 +167,10 @@ const products = [
     "image_url": "https://example.com/home-security-camera.jpg"
   },
   {
+    "productId":14,
     "name": "Professional Blender",
     "description": "Blend your favorite smoothies with this powerful blender.",
-    "price": 129.99,
+    "price": 399.99,
     "category": "Appliances",
     "brand": "KitchenPro",
     "stock": 15,
@@ -165,6 +179,7 @@ const products = [
     "image_url": "https://example.com/professional-blender.jpg"
   },
   {
+    "productId":15,
     "name": "Leather Handbag",
     "description": "Fashionable leather handbag for a stylish look.",
     "price": 179.99,
@@ -178,12 +193,10 @@ const products = [
 ]
 
 
-
-products.forEach(function(obj){
-  db.collection("assignment-products").add(obj).then(async docRef => {
-    console.log("'"+docRef.id +"[price="+obj.price+"]' ,")
-    })
-
+products.forEach(async function(obj){
+  await db.collection("assignment-products").doc(obj.productId.toString()).set(obj).then(async docRef => {
+    console.log("'"+docRef.id+"',")
+   })
 });
 
 

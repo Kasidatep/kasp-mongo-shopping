@@ -73,12 +73,12 @@ function formatDuration(seconds) {
                         Order Detail [{{ data.products?.length }} Product]
                     </div>
                     <div>
-                        Total .
+                        Total ${{ data.totalAmount }} .
                     </div>
                 </div>
                 <div v-for="(product, index) in data.products" class="flex justify-between border mt-1">
                     <div class="ml-2 my-1 ">
-                        {{ index + 1 }}) {{ product.productId }} <sp an
+                        {{ index + 1 }}) {{ product.name }} <sp an
                             class=" bg-pink-700 right-0 ml-2 rounded-full text-sm px-2 text-white">{{ product.quantity }}
                             item</sp>
                         <span class=" bg-green-700 right-0 ml-2 rounded-full text-sm px-2 text-white">${{ product.price

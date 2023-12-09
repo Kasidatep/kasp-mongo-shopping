@@ -31,7 +31,6 @@ defineProps(['dataList'])
                     </div>
                     {{ data.tel }}
                 </div>
-
         </div>
               
             </div>
